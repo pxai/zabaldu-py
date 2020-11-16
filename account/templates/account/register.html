@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Kontua berria sortu{% endblock %}
+
+{% block content %}
+  <h1>Kontua berria sortu</h1>
+  <p>Kontu berria sortu honen bitartez:</p>
+  <form method="post">
+    {{ user_form.as_p }}
+    {% csrf_token %}
+    <p><input type="submit" value="Kontua sortu"></p>
+  </form>
+{% endblock %}
