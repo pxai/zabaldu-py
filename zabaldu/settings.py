@@ -17,7 +17,7 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 # reading .env file
-# environ.Env.read_env()
+#environ.Env.read_env()
 
 # False if not in os.environ
 DEBUG = env('DEBUG')
@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'zabaldu.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db,
+    'default': {
+        'ENGINE': env('ENGINE'),
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
     }
 }
 
