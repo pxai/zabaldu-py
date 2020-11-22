@@ -87,8 +87,7 @@ WSGI_APPLICATION = 'zabaldu.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': env('ENGINE'),
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': env('HEROKU_POSTGRESQL_OLIVE_URL'),
     }
 }
 
