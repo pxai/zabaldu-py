@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'zabaldu.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': env('ENGINE'),
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
@@ -131,7 +131,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-import django_heroku
-django_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
